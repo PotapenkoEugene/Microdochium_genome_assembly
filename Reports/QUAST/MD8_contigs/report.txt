@@ -1,0 +1,24 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    MD8_fullfilteredcontigs_NOHIT_k127
+# contigs (>= 0 bp)         1070                              
+# contigs (>= 1000 bp)      702                               
+# contigs (>= 5000 bp)      508                               
+# contigs (>= 10000 bp)     461                               
+# contigs (>= 25000 bp)     368                               
+# contigs (>= 50000 bp)     249                               
+Total length (>= 0 bp)      36873365                          
+Total length (>= 1000 bp)   36693794                          
+Total length (>= 5000 bp)   36326601                          
+Total length (>= 10000 bp)  35978245                          
+Total length (>= 25000 bp)  34390542                          
+Total length (>= 50000 bp)  30026310                          
+# contigs                   858                               
+Largest contig              555315                            
+Total length                36804149                          
+GC (%)                      55.33                             
+N50                         113382                            
+N75                         62897                             
+L50                         99                                
+L75                         206                               
+# N's per 100 kbp           0.00                              

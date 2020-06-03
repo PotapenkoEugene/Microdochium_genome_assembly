@@ -1,0 +1,22 @@
+Assembly	MD1_fullfilteredcontigs_NOHIT_ISOLATED_k127
+# contigs (>= 0 bp)	1622
+# contigs (>= 1000 bp)	1320
+# contigs (>= 5000 bp)	1062
+# contigs (>= 10000 bp)	854
+# contigs (>= 25000 bp)	502
+# contigs (>= 50000 bp)	241
+Total length (>= 0 bp)	36778862
+Total length (>= 1000 bp)	36660115
+Total length (>= 5000 bp)	35943658
+Total length (>= 10000 bp)	34457372
+Total length (>= 25000 bp)	28549961
+Total length (>= 50000 bp)	19225329
+# contigs	1379
+Largest contig	261654
+Total length	36701501
+GC (%)	55.27
+N50	52880
+N75	27352
+L50	225
+L75	463
+# N's per 100 kbp	0.00

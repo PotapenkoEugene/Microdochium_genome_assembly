@@ -1,0 +1,66 @@
+/home/gene/Tools/Assembly/QC/quast-5.0.2/quast.py MD8_fullfilteredcontigs_NOHIT_k127.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid (linux_64)
+  Python version: 3.6.10
+  CPUs number: 8
+
+Started: 2020-05-17 00:39:46
+
+Logging to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/quast.log
+NOTICE: Maximum number of threads is set to 2 (use --threads option to set it manually)
+
+CWD: /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS
+Main parameters: 
+  MODE: default, threads: 2, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  MD8_fullfilteredcontigs_NOHIT_k127.fasta ==> MD8_fullfilteredcontigs_NOHIT_k127
+
+2020-05-17 00:39:48
+Running Basic statistics processor...
+  Contig files: 
+    MD8_fullfilteredcontigs_NOHIT_k127
+  Calculating N50 and L50...
+    MD8_fullfilteredcontigs_NOHIT_k127, N50 = 113382, L50 = 99, Total length = 36804149, GC % = 55.33, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/GC_content_plot.pdf
+  Drawing MD8_fullfilteredcontigs_NOHIT_k127 GC content plot...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/MD8_fullfilteredcontigs_NOHIT_k127_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/coverage_histogram.pdf
+  Drawing MD8_fullfilteredcontigs_NOHIT_k127 coverage histogram (bin size: 1x)...
+    saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/basic_stats/MD8_fullfilteredcontigs_NOHIT_k127_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2020-05-17 00:39:52
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-05-17 00:39:53
+RESULTS:
+  Text versions of total report are saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/report.html
+  PDF version (tables and plots) is saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/report.pdf
+  Icarus (contig browser) is saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/icarus.html
+  Log is saved to /home/gene/Orthonectida/Projects/Fungi_assmebly/BLOBTOOLS/quast_results/results_2020_05_17_00_39_46/quast.log
+
+Finished: 2020-05-17 00:39:53
+Elapsed time: 0:00:07.031046
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
