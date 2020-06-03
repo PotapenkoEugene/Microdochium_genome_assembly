@@ -1,0 +1,29 @@
+#!/bin/bash
+# Possition arguments  - *L001_R1* , *L001_R2*, *L002_R1*, *L002_R2*
+# Make preassembly (with correction by default):
+spades --pe1-1 $1 --pe1-2 $2 --pe2-1 $3 --pe2-2 $4 -o preassembly -t 24
+cd preassembly/corrected
+# Make data for blobtools2
+# BLASTDB:
+# For fast download ncbi nt database use this tool: https://github.com/yeban/ncbi-blast-dbs 
+# export BLASTDB=path/to/db
+blastn -db nt -query ../contigs.fasta -outfmt "6 qseqid staxids bitscore std" -max_target_seqs 10 -max_hsps 1 -evalue 1e-25 -num_threads 24 -out blastnscoreout
+# For faster download uniprot reference_proteomes database use this link: https://ftp.expasy.org/databases/uniprot/current_release/knowledgebase/reference_proteomes/
+diamond blastx --query ../contigs.fasta --db /media/hdd1/PREASSEMBLY/dbnt/uniprot/reference_proteomes.dmnd --outfmt 6 qseqid staxids bitscore qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore --sensitive --max-target-seqs 1 --evalue 1e-25 --threads 24 > blastxuniprotscoreout
+# BUSCO:
+busco -m geno -l saccharomycetes_odb10 -i ../contigs.fasta -o buscoout -c 24
+# Coverage:
+bwa index ../contigs.fasta
+bwa mem ../contigs.fasta *L001_R1*good* *L001_R2*good* -t 24 -o L001.sam
+bwa mem ../contigs.fasta *L002_R1*good* *L002_R2*good* -t 24 -o L002.sam
+samtools view -F 4 -b L001.sam -@ 24 > L001.bam
+samtools view -F 4 -b L002.sam -@ 24 > L002.bam
+samtools sort L001.bam -@ 24 > L001.srt.bam
+samtools sort L002.bam -@ 24 > L002.srt.bam
+# Remove intermediate files:
+rm -f L001.sam L002.sam L001.bam L002.bam
+# Start blobtools2:
+conda activate blobtools2
+blobtools create --threads 24 --taxid 67608 --taxdump "${BLASTDB}taxdump/" --hits blastxuniprotscoreout --hits blastnscoreout --taxrule bestsumorder --cov L001.srt.bam --busco ./buscoout/run_saccharomycetes_odb10/full_table.tsv --fasta ../contigs.fasta ./blobtools_out
+# After this, use this command to filter contigs with blobtoolkit viewer (in browser)
+blobtools host `pwd`

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Possition arguments: contigs_masked_repeats.fa
+# Gene prediction
+augustus --species=MD_bolleyi $1 > augustus.gtf
+getAnnoFasta.pl --seqfile $1 --codingseq=on augustus.gtf
+gtf2gff.pl < augustus.gtf --gff3 --out=augustus.gff

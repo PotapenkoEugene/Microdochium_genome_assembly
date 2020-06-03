@@ -1,0 +1,32 @@
+#!/bin/bash
+# Possition arguments: filtred_contigs_name_list
+# Start dir: ..../preassembly/corrected/
+# With blobtools2 we get list of trusted contigs names
+# Let's filter our contigs.fasta with this list
+# Use one of the Jim Kent's scripts:
+faSomeRecords ../contigs.fasta $1 filtred_contigs.fa
+# Then align corrected reads after spades to trusted contigs
+bwa index filtred_contigs.fa
+bwa mem filtred_contigs.fa *L001_R1*good*cor* *L001_R2*good*cor* -t 24 -o filtred_L001.sam 
+bwa mem filtred_contigs.fa *L002_R1*good*cor* *L002_R2*good*cor* -t 24 -o filtred_L002.sam
+# filter unmapped reads and convert in bam
+samtools view -F 4 -b -@ 24 filtred_L001.sam > filtred_L001.bam
+samtools view -F 4 -b -@ 24 filtred_L002.sam > filtred_L002.bam
+# sort
+samtools sort filtred_L001.bam -@ 24 > filtred_L001.srt.bam
+samtools sort filtred_L002.bam -@ 24 > filtred_L002.srt.bam
+# remove intermediate files
+rm -f filtred_L001.sam filtred_L002.sam filtred_L001.bam filtred_L002.bam
+# extract reads from bam files
+samtools fastq -1 L001_R1.fltrd.fq -2 L001_R2.fltrd.fq -0 /dev/null -n filtred_L001.srt.bam
+samtools fastq -1 L002_R1.fltrd.fq -2 L002_R2.fltrd.fq -0 /dev/null -n filtred_L002.srt.bam
+# restore pairs with this tool https://github.com/linsalrob/fastq-pair:
+fastq_pair L001_R1.fltrd.fq L001_R2.fltrd.fq
+fastq_pair L002_R1.fltrd.fq L002_R2.fltrd.fq
+# Assembly with spades
+spades --only-assembler --pe1-1 L001_R1.fltrd.fq.paired.fq --pe1-2 L001_R2.fltrd.fq.paired.fq --s1 L001_R1.fltrd.fq.single.fq --pe2-1 L002_R1.fltrd.fq.paired.fq --pe2-2 L002_R2.fltrd.fq.paired.fq --s2 L001_R1.fltrd.fq.single.fq -o ASSEMBLY -t 24
+# Check quality:
+cd ASSEMBLY
+quast contigs.fasta
+quast scaffolds.fasta
+busco -m geno -l saccharomycetes_odb10 -i contigs.fasta -o buscoout -c 24

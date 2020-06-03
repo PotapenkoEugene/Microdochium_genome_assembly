@@ -1,0 +1,9 @@
+#!/bin/bash
+# Possition arguments: contigs.fa(absolute path)
+# Start in RepeatModeler dir
+# Mask repeats with RepeatModeler 
+# Use combined databases: Dfam_3.0, RepBase-20170127 (putin RepeatMasker dir)
+BuildDatabase -name Microdochium $1
+RepeatModeler -engine ncbi -pa 24 -database Microdochium
+cd RM_*
+RepeatMasker -s -lib consensi.fa.classified $1

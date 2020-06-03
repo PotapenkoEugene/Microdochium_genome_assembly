@@ -1,0 +1,13 @@
+#!/bin/bash
+# Possition arguments: annotation.gbff
+# Training AUGUSTUSon Microdochium bolleyi genome
+randomSplit.pl GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff 27
+new_species.pl --species=MD_bolleyi
+etraining --species=MD_bolleyi --stopCodonExcludedFromCDS=true GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff.train
+augustus --species=MD_bolleyi GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff.test | tee AUGUSTUS.out
+###### Optimization (Optional)
+#optimize_augustus.pl --species=MD_bolleyi GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff.train
+## Again Train
+#etraining --species=MD_bolleyi --stopCodonExcludedFromCDS=true GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff.train
+#augustus --species=MD_bolleyi GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff.test | tee AUGUSTUS_optim.out
+######
