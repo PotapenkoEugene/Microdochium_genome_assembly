@@ -7,7 +7,7 @@ A. Tkachenko
 # De novo assembly and annotation of the *Microdochium sp.* genome
 
 Microdochium is a genus of ascomycete fungi. Our goal is to assemble and annotate 3 isolates of *Microdochium sp.* 
-Previousy genome of *M. bolleyi* was assembled and annotated [1].
+Previously genome of *M. bolleyi* was assembled and annotated [1].
 
 ## Goal
 - To assemble and annotate Microdochium sp. genome
@@ -25,7 +25,7 @@ Previousy genome of *M. bolleyi* was assembled and annotated [1].
 Microdochium is a genus of ascomycete fungi. Genomes of 3 isolates of plant pathogen *Microdochium sp.* were sequenced in Kazan Scientific Center of RAS. Reads in FASTQ format were obtained using Illumina MiSeq.
 
 ## Methods
-Quality check was done with FASTQC (v0.11.5) [2]. Illumina adapters were trimmed by AfterQC (v0.9.6) [3]. Reads were assembled using SPAdes (v3.14.0) genome assembler [4]. Assemblies were evaluated by the QUAST tool. We checked contigs for contaminations with KAIJU(web server) [5]/SIDR(alpha version) [6]/Blobtools2(v2.2.0) [7]. Contaminated reads were filtered out by aligning (bwa-mem v0.7.17-r1188) [8] them to trusted contigs. PE and SE reads were taken from alignments with Samtools fastq (v1.9) [9] and assembled with SPAdes. After comparing assemblies, we found out that decontamination using Blobtools2 was more effective. The assembly quality was evaluated with QUAST(v5.0.2) [10]. Quantitative assessment of genome assembly completeness was done with BUSCO [11]. We selected the best assembly for further annotation. To mask repetitions we used the RepeatModeler tool (v2.0.1. Combined Database: Dfam_3.0, RepBase-20170127) [12]. Structural annotation was performed with AUGUSTUS (v3.2.3) [13]. A genomic annotation of a close related species (*Microdochium bolleyi*) was used for AUGUSTUS training. Then KEGG [14] orthology-based functional annotation was done.
+Quality check was done with FASTQC (v0.11.5) [2]. Illumina adapters were trimmed by AfterQC (v0.9.6) [3]. Reads were assembled using SPAdes (v3.14.0) genome assembler [4]. Assemblies were evaluated by the QUAST tool. We checked contigs for contaminations with KAIJU(web server) [5]/SIDR(alpha version) [6]/Blobtools2(v2.2.0) [7]. Contaminated reads were filtered out by aligning (bwa-mem v0.7.17-r1188) [8] them to trusted contigs. PE and SE reads were taken from alignments with Samtools fastq (v1.9) [9] and assembled with SPAdes. After comparing assemblies, we found out that decontamination using Blobtools2 was more effective. The assembly quality was evaluated with QUAST(v5.0.2) [10]. Quantitative assessment of genome assembly completeness was done with BUSCO [11]. We selected the best assembly for further annotation. To mask repeats we used the RepeatModeler tool (v2.0.1. Combined Database: Dfam_3.0, RepBase-20170127) [12]. Structural annotation was performed with AUGUSTUS (v3.2.3) [13]. A genomic annotation of a close related species (*Microdochium bolleyi*) was used for AUGUSTUS training. Then KEGG [14] orthology-based functional annotation was done.
 
 ## Code
 You can find files with code in this repository in **Scripts** folder.
@@ -36,11 +36,11 @@ Position arguments: - 1) *L001_R1* 2) *L001_R2* 3) *L002_R1* 4) *L002_R2*. Makes
 
 2. Filter_contamination_blobtools2_Pipe_2
 
-Schould be run in directory of spades output: ...preassembly/corrected. Position arguments: 1) filtred_contigs_name_list. Extracts contigs based on list of names of trusted contigs, aligns reads to trusted contigs, extracts mapped reads, makes spades assembly and finnaly makes basic quality check.
+Should be run in directory of spades output: ...preassembly/corrected. Position arguments: 1) filtred_contigs_name_list. Extracts contigs based on list of names of trusted contigs, aligns reads to trusted contigs, extracts mapped reads, makes spades assembly and finnaly makes basic quality check.
 
 3. RepeatMasking
 
-Schould be run in directory of RepeatModeler. Position arguments: 1) contigs.fa. Builds databases and runs RepeatModeler on it (ncbi). Then runs RepeatMasker in slow mode.
+Should be run in directory of RepeatModeler. Position arguments: 1) contigs.fa. Builds databases and runs RepeatModeler on it (ncbi). Then runs RepeatMasker in slow mode.
 
 4. AUGUSTUS_training
 
@@ -51,7 +51,7 @@ Position arguments: 1) annotation.gbff. Makes a random split of the annotation f
 Position arguments: 1) contigs_masked_repeats.fa. Makes structural annotation of contigs.
 
 ## Results
-In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker and KEGG reports.
+In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAIJU, QUAST, RepeatMasker and KEGG reports.
 
 Size of the assembled genomes were 36.7/36.8/37.2 mb. Genomes consisted of  1360/817/272 scaffolds. 10 304 predicted genes were found. Median gene length is 1,454 bp and median protein length is 426 amino acids. The estimated percent of genome repeat is 4.59%. Functional annotation was done.
 We are planning to reassemble the genome with Nanopore reads and use RNA-seq reads for more precise annotation.
