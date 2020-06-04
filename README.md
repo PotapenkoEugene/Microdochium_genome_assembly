@@ -1,4 +1,11 @@
+Students
+E. Potapenko, O. Muraeva
+
+Supervisor
+A. Tkachenko
+
 # De novo assembly and annotation of the *Microdochium sp.* genome
+
 Microdochium is a genus of ascomycete fungi. Our goal is to assemble and annotate 3 isolates of *Microdochium sp.* 
 Previousy genome of *M. bolleyi* was assembled and annotated [1].
 
@@ -22,7 +29,30 @@ Quality check was done with FASTQC (v0.11.5) [2]. Illumina adapters were trimmed
 
 ## Code
 You can found files with code in this repository in **Scripts** folder.
+
+1. Filter_contamination_blobtools2_Pipe_1
+
+Position arguments: - 1) *L001_R1* 2) *L001_R2* 3) *L002_R1* 4) *L002_R2*. Makes a preassembly, prepares data for blobtools contamination analyses, runs blobtools and blobtoolkit viewer (browser).
+
+2. Filter_contamination_blobtools2_Pipe_2
+
+Schould be run in directory of spades output: ...preassembly/corrected. Position arguments: 1) filtred_contigs_name_list. Extracts contigs based on list of names of trusted contigs, aligns reads to trusted contigs, extracts mapped reads, makes spades assembly and finnaly makes basic quality check.
+
+3. RepeatMasking
+
+Schould be run in directory of RepeatModeler. Position arguments: 1) contigs.fa. Builds databases and runs RepeatModeler on it (ncbi). Then runs RepeatMasker in slow mode.
+
+4. AUGUSTUS_training
+
+Position arguments: 1) annotation.gbff. Makes a random split of the annotation file, runs etraining on train dataset and checks training on test dataset.
+
+5. AUGUSTUS_prediction
+
+Position arguments: 1) contigs_masked_repeats.fa. Makes structural annotation of contigs.
+
 ## Results
+In **Reports** folder you can found multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker and KEGG reports.
+
 Size of the assembled genomes were 36.7/36.8/37.2 mb. Genomes consisted of  1360/817/272 scaffolds. 10 304 predicted genes were found. Median gene length is 1,454 bp and median protein length is 426 amino acids. The estimated percent of genome repeat is 4.59%. Functional annotation was done.
 We are planning to reassemble the genome with Nanopore reads and use RNA-seq reads for more precise annotation.
 
