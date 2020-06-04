@@ -1,5 +1,5 @@
 #!/bin/bash
-# Possition arguments  - *L001_R1* , *L001_R2*, *L002_R1*, *L002_R2*
+# Position arguments  - *L001_R1* , *L001_R2*, *L002_R1*, *L002_R2*
 # Make preassembly (with correction by default):
 spades --pe1-1 $1 --pe1-2 $2 --pe2-1 $3 --pe2-2 $4 -o preassembly -t 24
 cd preassembly/corrected
