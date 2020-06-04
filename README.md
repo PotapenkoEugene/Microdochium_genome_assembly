@@ -37,13 +37,13 @@ We are planning to reassemble the genome with Nanopore reads and use RNA-seq rea
 
 [5]:Menzel, P., Ng, K. & Krogh, A. Fast and sensitive taxonomic classification for metagenomics with Kaiju. Nat Commun 7, 11257 (2016). https://doi.org/10.1038/ncomms11257
 
-[6]: https://github.com/damurdock/SIDR
+[6]: link to a web page: https://github.com/damurdock/SIDR
 
-[7]: https://github.com/blobtoolkit/blobtools2 
+[7]: link to a web page:: https://github.com/blobtoolkit/blobtools2 
 
 [8]: Li H. (2013) Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM. arXiv:1303.3997v1 [q-bio.GN].
 
-[9]: https://github.com/samtools/samtools
+[9]: link to a web page: https://github.com/samtools/samtools
 
 [10]: Alla Mikheenko, Andrey Prjibelski, Vladislav Saveliev, Dmitry Antipov, Alexey Gurevich,
 Versatile genome assembly evaluation with QUAST-LG,
