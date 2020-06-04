@@ -28,7 +28,7 @@ Microdochium is a genus of ascomycete fungi. Genomes of 3 isolates of plant path
 Quality check was done with FASTQC (v0.11.5) [2]. Illumina adapters were trimmed by AfterQC (v0.9.6) [3]. Reads were assembled using SPAdes (v3.14.0) genome assembler [4]. Assemblies were evaluated by the QUAST tool. We checked contigs for contaminations with KAIJU(web server) [5]/SIDR(alpha version) [6]/Blobtools2(v2.2.0) [7]. Contaminated reads were filtered out by aligning (bwa-mem v0.7.17-r1188) [8] them to trusted contigs. PE and SE reads were taken from alignments with Samtools fastq (v1.9) [9] and assembled with SPAdes. After comparing assemblies, we found out that decontamination using Blobtools2 was more effective. The assembly quality was evaluated with QUAST(v5.0.2) [10]. Quantitative assessment of genome assembly completeness was done with BUSCO [11]. We selected the best assembly for further annotation. To mask repetitions we used the RepeatModeler tool (v2.0.1. Combined Database: Dfam_3.0, RepBase-20170127) [12]. Structural annotation was performed with AUGUSTUS (v3.2.3) [13]. A genomic annotation of a close related species (*Microdochium bolleyi*) was used for AUGUSTUS training. Then KEGG [14] orthology-based functional annotation was done.
 
 ## Code
-You can found files with code in this repository in **Scripts** folder.
+You can find files with code in this repository in **Scripts** folder.
 
 1. Filter_contamination_blobtools2_Pipe_1
 
@@ -51,7 +51,7 @@ Position arguments: 1) annotation.gbff. Makes a random split of the annotation f
 Position arguments: 1) contigs_masked_repeats.fa. Makes structural annotation of contigs.
 
 ## Results
-In **Reports** folder you can found multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker and KEGG reports.
+In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker and KEGG reports.
 
 Size of the assembled genomes were 36.7/36.8/37.2 mb. Genomes consisted of  1360/817/272 scaffolds. 10 304 predicted genes were found. Median gene length is 1,454 bp and median protein length is 426 amino acids. The estimated percent of genome repeat is 4.59%. Functional annotation was done.
 We are planning to reassemble the genome with Nanopore reads and use RNA-seq reads for more precise annotation.
