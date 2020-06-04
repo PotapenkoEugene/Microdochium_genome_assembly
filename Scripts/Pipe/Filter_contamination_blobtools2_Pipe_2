@@ -1,5 +1,5 @@
 #!/bin/bash
-# Possition arguments: filtred_contigs_name_list
+# Position arguments: filtred_contigs_name_list
 # Start dir: ..../preassembly/corrected/
 # With blobtools2 we get list of trusted contigs names
 # Let's filter our contigs.fasta with this list
