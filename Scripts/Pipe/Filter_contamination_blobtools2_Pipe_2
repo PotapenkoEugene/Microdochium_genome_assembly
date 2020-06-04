@@ -24,7 +24,7 @@ samtools fastq -1 L002_R1.fltrd.fq -2 L002_R2.fltrd.fq -0 /dev/null -n filtred_L
 fastq_pair L001_R1.fltrd.fq L001_R2.fltrd.fq
 fastq_pair L002_R1.fltrd.fq L002_R2.fltrd.fq
 # Assembly with spades
-spades --only-assembler --pe1-1 L001_R1.fltrd.fq.paired.fq --pe1-2 L001_R2.fltrd.fq.paired.fq --s1 L001_R1.fltrd.fq.single.fq --pe2-1 L002_R1.fltrd.fq.paired.fq --pe2-2 L002_R2.fltrd.fq.paired.fq --s2 L001_R1.fltrd.fq.single.fq -o ASSEMBLY -t 24
+spades --only-assembler -k 21,33,55,77,99,127 --pe1-1 L001_R1.fltrd.fq.paired.fq --pe1-2 L001_R2.fltrd.fq.paired.fq --s1 L001_R1.fltrd.fq.single.fq --pe2-1 L002_R1.fltrd.fq.paired.fq --pe2-2 L002_R2.fltrd.fq.paired.fq --s2 L001_R1.fltrd.fq.single.fq -o ASSEMBLY -t 24
 # Check quality:
 cd ASSEMBLY
 quast contigs.fasta
