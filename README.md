@@ -50,6 +50,11 @@ Position arguments: 1) annotation.gbff. Makes a random split of the annotation f
 
 Position arguments: 1) contigs_masked_repeats.fa. Makes structural annotation of contigs.
 
+6. Also, we added python scripts for filtration with KAIJU output. We didn't use it for final assembly.
+
+filter_reads_by_KAIJU_output.py
+Position arguments: input_R1.fq.gz input_R2.fq.gz KAIJU_output.gz out_good_R1.fq out_good_R2.fq out_bad_R1.fq out_bad_R2.fq
+
 ## Results
 In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker, BUSCO and KEGG reports.
 
