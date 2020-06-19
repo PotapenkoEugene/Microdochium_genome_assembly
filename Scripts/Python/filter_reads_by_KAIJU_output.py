@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 # Possition arguments:
-# arg1 = R1.fq.gz
-# arg2 = R2.fq.gz
+# arg1 = input_R1.fq.gz
+# arg2 = input_R2.fq.gz
 # arg3 = KAIJU_output.gz
-# arg4 = good_R1.fq
-# arg5 = good_R2.fq
-# arg6 = bad_R1.fq (filtered reads)
-# arg7 = bad_R2.fq
+# arg4 = out_good_R1.fq
+# arg5 = out_good_R2.fq
+# arg6 = out_bad_R1.fq
+# arg7 = out_bad_R2.fq
 
 # usage:
-# filter_reads_by_namelist.py R1_read.fq.gz R2_read.fq.gz KAIJI_output.gz out_good_R1 out_good_R2 out_bad_R1 out_bad_R2
+# filter_reads_by_namelist.py inp_R1_read.fq.gz inp_R2_read.fq.gz KAIJI_output.gz out_good_R1 out_good_R2 out_bad_R1 out_bad_R2
 
 from Bio import SeqIO
 import sys
