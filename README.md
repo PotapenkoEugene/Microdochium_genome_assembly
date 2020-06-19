@@ -51,9 +51,9 @@ Position arguments: 1) annotation.gbff. Makes a random split of the annotation f
 Position arguments: 1) contigs_masked_repeats.fa. Makes structural annotation of contigs.
 
 ## Results
-In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker and KEGG reports.
+In **Reports** folder you can find multiqc, AfterQC, blobtools2, KAJU, QUAST, RepeatMasker, BUSCO and KEGG reports.
 
-Size of the assembled genomes were 36.7/36.8/37.2 mb. Genomes consisted of  1360/817/272 scaffolds. 10 304 predicted genes were found. Median gene length is 1,454 bp and median protein length is 426 amino acids. The estimated percent of genome repeat is 4.59%. Functional annotation was done.
+Size of the assembled genomes were 36.7/36.8/37.2 mb. Genomes consisted of  1360/817/272 scaffolds. 10 304 predicted genes were found. Median gene length is 1,454 bp and median protein length is 426 amino acids. The estimated percent of genome repeat is 4.59%. Functional annotation was done. BUSCO output was similar to published *M. bolleyi*'s annotation. 
 We are planning to reassemble the genome with Nanopore reads and use RNA-seq reads for more precise annotation.
 
 ## References
