@@ -1,0 +1,14 @@
+# BUSCO version is: 4.0.6 
+# The lineage dataset is: saccharomycetes_odb10 (Creation date: 2019-11-20, number of species: 76, number of BUSCOs: 2137)
+# Summarized benchmarking in BUSCO notation for file MD9_fullfilteredcontigs_NOHIT_k127.fasta
+# BUSCO was run in mode: genome
+
+	***** Results: *****
+
+	C:73.1%[S:72.3%,D:0.8%],F:4.4%,M:22.5%,n:2137	   
+	1563	Complete BUSCOs (C)			   
+	1546	Complete and single-copy BUSCOs (S)	   
+	17	Complete and duplicated BUSCOs (D)	   
+	94	Fragmented BUSCOs (F)			   
+	480	Missing BUSCOs (M)			   
+	2137	Total BUSCO groups searched		   

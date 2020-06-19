@@ -1,0 +1,14 @@
+# BUSCO version is: 4.0.6 
+# The lineage dataset is: saccharomycetes_odb10 (Creation date: 2019-11-20, number of species: 76, number of BUSCOs: 2137)
+# Summarized benchmarking in BUSCO notation for file GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.fna
+# BUSCO was run in mode: genome
+
+	***** Results: *****
+
+	C:73.9%[S:73.2%,D:0.7%],F:3.6%,M:22.5%,n:2137	   
+	1580	Complete BUSCOs (C)			   
+	1564	Complete and single-copy BUSCOs (S)	   
+	16	Complete and duplicated BUSCOs (D)	   
+	76	Fragmented BUSCOs (F)			   
+	481	Missing BUSCOs (M)			   
+	2137	Total BUSCO groups searched		   
