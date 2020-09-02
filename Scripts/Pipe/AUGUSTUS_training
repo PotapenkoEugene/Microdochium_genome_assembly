@@ -1,5 +1,5 @@
 #!/bin/bash
-# Possition arguments: annotation.gbff
+# Position arguments: annotation.gbff
 # Training AUGUSTUSon Microdochium bolleyi genome
 randomSplit.pl GCA_001566295.1_Microdochium_bolleyi_v1.0_genomic.gbff 27
 new_species.pl --species=MD_bolleyi

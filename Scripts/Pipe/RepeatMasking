@@ -1,5 +1,5 @@
 #!/bin/bash
-# Possition arguments: contigs.fa(absolute path)
+# Position arguments: contigs.fa(absolute path)
 # Start in RepeatModeler dir
 # Mask repeats with RepeatModeler 
 # Use combined databases: Dfam_3.0, RepBase-20170127 (putin RepeatMasker dir)
